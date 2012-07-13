@@ -14,7 +14,7 @@ module TotenDev
       post_ws  = '/create/'
       headers  = { 'Content-Type' => 'application/x-www-form-urlencoded' }
       req      = Net::HTTP::Post.new( post_ws, headers )
-      req.body = long_url
+      req.body = 'link=${long_url}'
       response = Net::HTTP.new( base_url ).start { |http| http.request(req) }
       response
     end
